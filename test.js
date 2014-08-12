@@ -50,21 +50,20 @@ test('element added to body', function (t) {
   var div = document.createElement('div')
     , div2 = document.createElement('div')
     , text = document.createTextNode('hello, world!')
-      // use offset for it to work as expected in testling
-    , offset = body.childNodes.length
 
-  body.appendChild(div)
+  // use insertBefore so that it works nice with testling
+  body.insertBefore(div, body.childNodes[0])
 
   div.setAttribute('class', 'foo bar')
 
-  t.equal(cssPath(div), 'html > body > div.foo.bar:nth-child('  + (offset + 1) + ')')
+  t.equal(cssPath(div), 'html > body > div.foo.bar:nth-child(1)')
 
-  body.appendChild(text)
-  body.appendChild(div2)
+  body.insertBefore(text, body.childNodes[1])
+  body.insertBefore(div2, body.childNodes[2])
 
-  t.equal(cssPath(div2), 'html > body > div:nth-child('  + (offset + 2) + ')')
-  t.equal(cssPath(div2, document.documentElement), 'body > div:nth-child('  + (offset + 2) + ')')
-  t.equal(cssPath(div2, body), 'div:nth-child('  + (offset + 2) + ')')
+  t.equal(cssPath(div2), 'html > body > div:nth-child(2)')
+  t.equal(cssPath(div2, document.documentElement), 'body > div:nth-child(2)')
+  t.equal(cssPath(div2, body), 'div:nth-child(2)')
 
   div.setAttribute('id', 'identifier')
 
