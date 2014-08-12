@@ -11,6 +11,19 @@
   "scripts": {
     "test": "tape test.js"
   },
+  "testling": {
+    "files": "test.js",
+    "browsers": [
+      "ie/9..latest",
+      "chrome/latest",
+      "firefox/latest",
+      "safari/latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ]
+  },
   "author": "David Björklund <david.bjorklund@gmail.com> (http://davidbjorklund.com/)",
   "license": "MIT"
 }
