@@ -1,0 +1,16 @@
+{
+  "name": "css-path",
+  "version": "0.0.0",
+  "description": "Get the unique css-path to a DOM-element",
+  "main": "css-path.js",
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^2.13.4",
+    "global": "^4.2.1"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "author": "David Björklund <david.bjorklund@gmail.com> (http://davidbjorklund.com/)",
+  "license": "MIT"
+}
