@@ -38,7 +38,7 @@ var nthChild = function (elm) {
 
       list.push(selector.join(''))
 
-      if (elm.parentNode && elm.parentNode !== rootNode) {
+      if (elm.parentNode && elm.parentNode !== rootNode && elm.parentNode.tagName) {
         path(elm.parentNode, rootNode, list)
       }
 
