@@ -20,7 +20,7 @@ var nthChild = function (elm) {
         , id = elm.getAttribute('id')
 
       if (id) {
-        list.push(tag + '#' + id.trim())
+        list.unshift(tag + '#' + id.trim())
         return list
       }
 
@@ -36,7 +36,7 @@ var nthChild = function (elm) {
         selector.push(':nth-child(' + nthChild(elm) + ')')
       }
 
-      list.push(selector.join(''))
+      list.unshift(selector.join(''))
 
       if (elm.parentNode && elm.parentNode !== rootNode && elm.parentNode.tagName) {
         path(elm.parentNode, rootNode, list)
@@ -46,5 +46,5 @@ var nthChild = function (elm) {
     }
 
 module.exports = function (elm, rootNode) {
-  return path(elm, rootNode, []).reverse().join(' > ')
+  return path(elm, rootNode, []).join(' > ')
 }

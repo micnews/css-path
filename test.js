@@ -5,12 +5,12 @@ var test = require('tape')
 
   , cssPath = require('./css-path')
 
-test('body', function (t) {
+test('the body element', function (t) {
   t.equal(cssPath(document.body), 'html > body')
   t.end()
 })
 
-test('unattached element', function (t) {
+test('elements not attached to the body', function (t) {
   var div = document.createElement('div')
     , span = document.createElement('span')
 
@@ -32,7 +32,7 @@ test('unattached element', function (t) {
   t.end()
 })
 
-test('class/id with some whitespace', function (t) {
+test('attributes with some whitespace', function (t) {
   var elm = document.createElement('div')
 
   elm.setAttribute('class', ' foo\tbar\n')
@@ -46,7 +46,7 @@ test('class/id with some whitespace', function (t) {
   t.end()
 })
 
-test('element added to body', function (t) {
+test('elements attached to the body', function (t) {
   var div = document.createElement('div')
     , div2 = document.createElement('div')
     , text = document.createTextNode('hello, world!')
