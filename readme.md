@@ -6,6 +6,9 @@ Get the unique css-path to a DOM-element
 
 [![NPM](https://nodei.co/npm-dl/css-path.png)](https://nodei.co/npm/css-path/)
 
+[![browser support](https://ci.testling.com/micnews/css-path.png)](https://ci.testling.com/micnews/css-path)
+
+
 ## Installation
 
 ```
