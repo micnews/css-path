@@ -32,6 +32,20 @@ test('unattached element', function (t) {
   t.end()
 })
 
+test('class/id with some whitespace', function (t) {
+  var elm = document.createElement('div')
+
+  elm.setAttribute('class', ' foo\tbar\n')
+  t.equal(cssPath(elm), 'div.foo.bar')
+
+  elm.setAttribute('class', '')
+  t.equal(cssPath(elm), 'div')
+
+  elm.setAttribute('id', ' bong ')
+  t.equal(cssPath(elm), 'div#bong')
+  t.end()
+})
+
 test('element added to body', function (t) {
   var div = document.createElement('div')
     , div2 = document.createElement('div')

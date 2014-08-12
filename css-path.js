@@ -20,13 +20,13 @@ var nthChild = function (elm) {
         , id = elm.getAttribute('id')
 
       if (id) {
-        list.push(tag + '#' + id)
+        list.push(tag + '#' + id.trim())
         return list
       }
 
       if (className) {
         selector.push(
-          className.split(' ').map(function (part) {
+          className.split(/\s/g).filter(Boolean).map(function (part) {
             return '.' + part
           }).join('')
         )
