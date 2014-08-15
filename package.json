@@ -5,11 +5,12 @@
   "main": "css-path.js",
   "dependencies": {},
   "devDependencies": {
+    "global": "^4.2.1",
     "tape": "^2.13.4",
-    "global": "^4.2.1"
+    "zuul": "^1.10.1"
   },
   "scripts": {
-    "test": "tape test.js"
+    "test": "zuul -- test.js"
   },
   "testling": {
     "files": "test.js",

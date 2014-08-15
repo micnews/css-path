@@ -1,0 +1,16 @@
+ui: tape
+
+browsers:
+  - name: chrome
+    version: latest
+  - name: safari
+    version: latest
+  - name: firefox
+    version: latest
+  - name: internet explorer
+    version: 8..latest
+  - name: opera
+    version: latest
+
+sauce_username: micnews-css-path
+sauce_key: e6c017e0-7701-4844-9cf6-4d9f19c8b844
