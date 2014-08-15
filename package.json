@@ -3,7 +3,9 @@
   "version": "1.0.1",
   "description": "Get the unique css-path to a DOM-element",
   "main": "css-path.js",
-  "dependencies": {},
+  "dependencies": {
+    "trim": "0.0.1"
+  },
   "devDependencies": {
     "global": "^4.2.1",
     "tape": "^2.13.4",

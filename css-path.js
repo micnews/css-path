@@ -1,4 +1,21 @@
-var nthChild = function (elm) {
+var trim = require('trim')
+
+  , classSelector = function (className) {
+      console.log('1')
+      var selectors = className.split(/\s/g)
+        , array = []
+
+      for (var i = 0; i < selectors.length; ++i) {
+        if (selectors[i].length > 0) {
+          array.push('.' + selectors[i])
+        }
+      }
+
+      console.log('2')
+      return array.join('')
+    }
+
+  , nthChild = function (elm) {
       var childNumber = 0
         , childNodes = elm.parentNode.childNodes
         , index = 0
@@ -20,17 +37,12 @@ var nthChild = function (elm) {
         , id = elm.getAttribute('id')
 
       if (id) {
-        list.unshift(tag + '#' + id.trim())
+        list.unshift(tag + '#' + trim(id))
         return list
       }
 
-      if (className) {
-        selector.push(
-          className.split(/\s/g).filter(Boolean).map(function (part) {
-            return '.' + part
-          }).join('')
-        )
-      }
+      if (className)
+        selector.push( classSelector(className) )
 
       if (tag !== 'html' && tag !== 'body' && elm.parentNode) {
         selector.push(':nth-child(' + nthChild(elm) + ')')
