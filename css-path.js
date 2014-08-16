@@ -1,7 +1,6 @@
 var trim = require('trim')
 
   , classSelector = function (className) {
-      console.log('1')
       var selectors = className.split(/\s/g)
         , array = []
 
@@ -11,7 +10,6 @@ var trim = require('trim')
         }
       }
 
-      console.log('2')
       return array.join('')
     }
 
