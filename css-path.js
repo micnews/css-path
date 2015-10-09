@@ -35,8 +35,14 @@ var trim = require('trim')
         , id = elm.getAttribute('id')
 
       if (id) {
-        list.unshift(tag + '#' + trim(id))
-        return list
+        list.unshift( tag + '#' + trim(id) );
+        var isUnique = rootNode.querySelectorAll(list.join('>')).length === 1;
+        if (isUnique){
+         return list;
+        } else {
+          list.shift();
+          selector.push('#' + trim(id));
+        }
       }
 
       if (className)
