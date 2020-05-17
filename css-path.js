@@ -35,7 +35,8 @@ var trim = require('trim')
         , id = elm.getAttribute('id')
 
       if (id) {
-        list.unshift(tag + '#' + trim(id))
+        var escapeSelector = function(selector) {return "".replace.call(selector,/(^[^_a-zA-Z\u00a0-\uffff]|[^-_a-zA-Z0-9\u00a0-\uffff])/g, "\\$1")};
+        list.unshift(tag + '#' + escapeSelector(trim(id)))
         return list
       }
 
